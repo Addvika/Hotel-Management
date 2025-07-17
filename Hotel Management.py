@@ -43,14 +43,47 @@ def entrees_menu():
     print("4.Beef Burger : $24")
     print("5.Lasagna : $20")
     print("6.Chicken Wrap : $22")
-    print("7.Chicken Alfredo : $20")
-    print("8.Chicken Alfredo : $20")
-    print("9.Chicken Alfredo : $20")
-    print("10.Chicken Alfredo : $20")
+    print("7.Steak : $35")
+    print("8.Caesar Salad : $17")
+    print("9.Mozzarella Sticks : $18")
+    print("10.Hotel Special : $25")
+
+def drinks_menu():
+    print("11.Cold Drinks : $1.50")
+    print("12.Orange Juice : $2")
+    print("13.Mixed Fruit Juice : $2.5")
+    print("14.Water Bottle : $1")
+    print("15.Coffee : $2")
+    print("16.Hot Chocolate : $2.5")
+    print("17.Tea : $2.7")
     
 
 def food():
     print("Welcome to ",x,"'s Restaurant!What would you like?")
+    entrees_menu()
+    drinks_menu()
+    food_cost={1:20,2:18,3:19,4:24,5:20,6:22,7:35,8:17,9:18,10:25,11:1.5,12:2,13:2.5,14:1,15:2,16:2.5,17:2.7}
+    to_order=input("Are you ready to order?Y/N")
+    food_bill=0
+    while to_order=="Y":
+        see_menu=input("Would you like to see the menus again?Y/N")
+        if see_menu=="Y":
+            entrees_menu()
+            drinks_menu()
+        else:
+            menu_number=int(input("Enter the item number:"))
+            if menu_number not in food_cost:
+                print("Invalid Number")
+            else:
+                food_bill+=food_cost[menu_number]
+                price+=food_cost[menu_number]
+     to_order=input("Would you like to keep ordering?Y/N")
+     print("Your food bill is: $",food_bill)
+        
+                    
+                          
+    
+        
     
     
     
